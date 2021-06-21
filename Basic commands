@@ -1,0 +1,20 @@
+$docker --version
+docker images
+docker pull hello-world
+docker images
+docker run hello-world
+docker ps -a
+docker container rm <container_id>
+
+
+docker build . -t myimage:v1
+docker run -p 8080:8080 myimage:v1
+
+
+ibmcloud target
+ibmcloud cr namespaces
+
+docker tag myimage:v1 us.icr.io/$MY_NAMESPACE/hello-world:1
+docker push us.icr.io/$MY_NAMESPACE/hello-world:1
+ibmcloud cr images   {command to check successfull push of image}
+ibmcloud cr images --restrict $MY_NAMESPACE
